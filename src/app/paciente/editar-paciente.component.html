@@ -1,0 +1,27 @@
+<app-menu></app-menu>
+<div class="container  " *ngIf="paciente">
+  <div class="row mt-5">
+    <div class="col-md-4 mx-auto">
+      <form (ngSubmit)="onUpdate()" novalidate #f="ngForm">
+        <div class="form-group">
+          <label>Cedula</label>
+          <input type="text" class="form-control" id="cedula" name="cedula"
+                 [(ngModel)]="paciente.cedula" required="required">
+        </div>
+        <div class="form-group">
+          <label>Nombre</label>
+          <input type="text" class="form-control" id="nombre" name="nombre"
+                 [(ngModel)]="paciente.nombre" required="required">
+        </div>
+        <div class="form-group">
+          <label>Apellido</label>
+          <input type="text" class="form-control" id="apellido" name="apellido"
+                 [(ngModel)]="paciente.apellido" required="required">
+        </div>
+        <button class="btn btn-outline-info btn -block" [disabled]="!f.valid">Actualizar</button>
+      </form>
+
+    </div>
+  </div>
+</div>
+

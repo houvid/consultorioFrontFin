@@ -1,0 +1,27 @@
+<app-menu></app-menu>
+<div class="container-mt-5 ">
+  <div class="row mt-5">
+    <div class="col-md-4 mx-auto">
+      <form (ngSubmit)="onCreate()" novalidate #f="ngForm">
+        <div class="form-group">
+          <label>Cedula</label>
+          <input type="text" class="form-control" id="cedula" name="cedula"
+                 [(ngModel)]="cedula" required="required">
+        </div>
+        <div class="form-group">
+          <label>Nombre</label>
+          <input type="text" class="form-control" id="nombre" name="nombre"
+                 [(ngModel)]="nombre" required="required">
+        </div>
+        <div class="form-group">
+          <label>Apellido</label>
+          <input type="text" class="form-control" id="apellido" name="apellido"
+                 [(ngModel)]="apellido" required="required">
+        </div>
+        <button class="btn btn-outline-info btn -block" [disabled]="!f.valid">Crear</button>
+      </form>
+
+    </div>
+  </div>
+</div>
+
