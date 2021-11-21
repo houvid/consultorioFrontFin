@@ -1,0 +1,12 @@
+<app-menu></app-menu>
+
+<div class="calendar">
+  <div class="btn-Left">
+    <mat-grid-list cols="2" rowHeight="100px">
+      <div class="example-button-row">
+        <button mat-raised-button color="accent" (click)="dialogAsig()">Nuevo evento</button>
+      </div>
+    </mat-grid-list>
+  </div>
+  <p-fullCalendar [events]="events"  [options]="options"></p-fullCalendar>
+</div>

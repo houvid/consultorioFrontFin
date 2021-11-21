@@ -1,0 +1,10 @@
+.calendar{
+  width: 90%;
+  align: center;
+  margin: auto;
+  padding-top: 2%;
+}
+.btn-Left{
+  padding-left: 2%;
+  float: right;
+}

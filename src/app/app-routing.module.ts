@@ -7,16 +7,20 @@ import {EditarPacienteComponent} from './paciente/editar-paciente.component';
 import {IndexComponent} from './index/index.component';
 import {LoginComponent} from './auth/login.component';
 import {RegistroComponent} from './auth/registro.component';
-
+import {ProdGuardService as guard} from './guards/prod-guard.service';
+import {HistoriaPacienteComponent} from './historia-paciente/historia-paciente.component';
+import {CalendarComponent} from './calendar/calendar.component';
 
 const routes: Routes = [
   {path: '', component: IndexComponent},
   {path: 'login', component: LoginComponent},
   {path: 'registro', component: RegistroComponent},
-  {path: 'lista', component: ListaPacienteComponent},
-  {path: 'detalle/:id', component: DetallePacienteComponent},
-  {path: 'nuevo', component: NuevoPacienteComponent},
-  {path: 'editar/:id', component: EditarPacienteComponent},
+  {path: 'lista', component: ListaPacienteComponent, canActivate: [guard], data: {expectedRol: ['admin', 'user']}},
+  {path: 'calendar', component: CalendarComponent, canActivate: [guard], data: {expectedRol: ['admin', 'user']}},
+  {path: 'detalle/:id', component: DetallePacienteComponent, canActivate: [guard], data: {expectedRol: ['admin', 'user']}},
+  {path: 'nuevo', component: NuevoPacienteComponent, canActivate: [guard], data: {expectedRol: ['admin', 'user']}},
+  {path: 'editar/:id', component: EditarPacienteComponent, canActivate: [guard], data: {expectedRol: ['admin', 'user']}},
+  {path: 'registrarHistoria/:id', component: HistoriaPacienteComponent, canActivate: [guard], data: {expectedRol: ['admin', 'user']}},
   {path: '**', redirectTo: '', pathMatch: 'full'}
 ];
 

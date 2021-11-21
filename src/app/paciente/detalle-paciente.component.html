@@ -1,23 +1,70 @@
 <app-menu></app-menu>
-<div class="container mt-3">
-  <div class="row mt-5" *ngIf="paciente">
-    <div class="col-md-4 mx-auto">
-      <div class="card" style="width: 18rem;">
-        <div class="card-header">
-          <b>Paciente </b>
-        </div>
-        <ul class="list-group list-group-flush">
-          <li class="list-group-item"><b>Nombre: </b>{{paciente.nombre}} {{paciente.apellido}}</li>
-          <li class="list-group-item"><b>ID: </b>{{paciente.id}}</li>
-          <li class="list-group-item"><b>Cedula: </b>{{paciente.cedula}}</li>
+<div class="container mt-3" style="width: 90%" *ngIf="paciente">
+  <h1>{{paciente.nombre}} {{paciente.apellido}}</h1>
+  <img src="/assets/img/20170425050426_pie-chart.png" width="500" height="300" alt="" style="margin-left: 60px; margin-bottom: 30px">
+  <table class="table" style="width: 100%">
+    <tbody>
+    <tr>
+      <td><b> Nombre: {{paciente.nombre}} {{paciente.apellido}}</b>  </td>
+      <td><b> Cedula: </b> {{paciente.cedula}} </td>
+      <td><b> Sexo: </b> {{paciente.sexo}} </td>
 
-        </ul>
-        <div class="card-footer">
-          <button class="btn btn-outline-info btn-block" (click)="volver()"><i class="fas fa-hand-point-left"></i> Volver</button>
-        </div>
-      </div>
-    </div>
-  </div>
+    </tr>
+    <tr>
+      <td><b> Nivel Escolaridad: </b> {{paciente.nivelEscolaridad}} </td>
+      <td><b> ocupacion: </b> {{paciente.ocupacion}} </td>
+      <td><b> institucion: </b> {{paciente.institucion}} </td>
+
+    </tr>
+    <tr>
+      <td><b> fechaNacimiento: </b> {{paciente.fechaNacimiento}} </td>
+      <td><b> lugar Nacimiento: </b> {{paciente.lugarNacimiento}} </td>
+      <td><b> Direccion: </b> {{paciente.direccion}} </td>
+
+    </tr>
+    <tr>
+      <td><b> municipio: </b> {{paciente.municipio}} </td>
+      <td><b> telefono: </b> {{paciente.celular}} </td>
+      <td><b> emai: </b> {{paciente.emai}} </td>
+
+    </tr>
+    <tr>
+      <td><b> estadoCivil: </b> {{paciente.estadoCivil}} </td>
+      <td><b> estrato: </b> {{paciente.estrato}} </td>
+      <td><b> tarifa: </b> {{paciente.tarifa}} </td>
+    </tr>
+    <tr>
+      <td><b> nombreAcudiente: </b> {{paciente.nombreAcudiente}} </td>
+      <td><b> edadAcudiente: </b> {{paciente.edadAcudiente}} </td>
+      <td><b> telefonoAcudiente: </b> {{paciente.telefonoAcudiente}} </td>
+
+    </tr>
+    <tr>
+      <td><b> celularAcudiente: </b> {{paciente.celularAcudiente}} </td>
+      <td><b> direccionAcudiente: </b> {{paciente.direccionAcudiente}} </td>
+    </tr>
+    <tr>
+    <td colspan="4">
+      <button class="btn btn-outline-info btn-block" (click)="volver()"><i class="fas fa-hand-point-left"></i> Volver</button>
+    </td>
+    </tr>
+    </tbody>
+  </table>
+
+  <table class="table" style="width: 100%">
+    <tr>
+      <th>Consumo</th>
+      <th>Medicos</th>
+      <th>Psicologicos</th>
+      <th>psiquiatricos</th>
+    </tr>
+    <tr *ngFor="let ant of paciente.antecedentes;">
+      <th>{{ant.consumo}}</th>
+      <th>{{ant.medicos}}</th>
+      <th>{{ant.psicologicos}}</th>
+      <th>{{ant.psiquiatricos}}</th>
+    </tr>
+  </table>
 </div>
 
 

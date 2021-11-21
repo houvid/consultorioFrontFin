@@ -24,6 +24,7 @@ export class DetallePacienteComponent implements OnInit {
     this.pacienteService.detalle(id).subscribe(
       data => {
         this.paciente = data;
+        console.log(data);
     },
       err => {
         this.toastr.error(err.error.mensaje, 'Error', {
@@ -34,7 +35,8 @@ export class DetallePacienteComponent implements OnInit {
     );
   }
   volver(): void{
-    this.router.navigate(['/']);
+    this.router.navigate(['/lista']);
   }
+
 
 }

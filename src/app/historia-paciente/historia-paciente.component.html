@@ -1,0 +1,75 @@
+<app-menu></app-menu>
+<div class="container  " *ngIf="paciente">
+  <div class="row mt-5">
+    <div class="col-md-9 mx-auto">
+      <h1>{{paciente.cedula}} - {{paciente.nombre}} {{paciente.apellido}}</h1>
+      <form (ngSubmit)="onRegister()" novalidate #f="ngForm">
+        <div class="form-group">
+          <label><b>Antecedentes del Paciente</b></label>
+        </div>
+        <div class="form-group">
+          <label><b>Médicos</b></label>
+          <textarea class="form-control" id="antecedenteMedicoPac" name="antecedenteMedicoPac"
+                     required="required" [(ngModel)]="antecedenteMedicoPac"> </textarea>
+        </div>
+        <div class="form-group">
+          <label><b>Consumo</b></label>
+          <textarea class="form-control" id="antecedenteConsumoPac" name="antecedenteConsumoPac"
+                    required="required" [(ngModel)]="antecedenteConsumoPac"> </textarea>
+        </div>
+        <div class="form-group">
+          <label><b>Psicológicos</b></label>
+          <textarea class="form-control" id="antecedentePsicologico" name="antecedentePsicologico"
+                    required="required" [(ngModel)]="antecedentePsicologico"> </textarea>
+        </div>
+        <div class="form-group">
+          <label><b>Psquiatricos</b></label>
+          <textarea class="form-control" id="antecedentePsiquiatrico" name="antecedentePsiquiatrico"
+                    required="required" [(ngModel)]="antecedentePsiquiatrico"> </textarea>
+        </div>
+        <div class="form-group">
+          <label><b>Médicos</b></label>
+          <textarea class="form-control" id="antecedenteMedicoFam" name="antecedenteMedicoFam"
+                    required="required" [(ngModel)]="antecedenteMedicoFam"> </textarea>
+        </div>
+        <div class="form-group">
+          <label><b>Antecedentes Familiares</b></label>
+        </div>
+        <div class="form-group">
+          <label><b>Consumo</b></label>
+          <textarea class="form-control" id="antecedenteConsumoFam" name="antecedenteConsumoFam"
+                    required="required" [(ngModel)]="antecedenteConsumoFam"> </textarea>
+        </div>
+        <div class="form-group">
+          <label><b>Psicologico</b></label>
+          <textarea class="form-control" id="antecedentePsicologicoFam" name="antecedentePsicologicoFam"
+                    required="required" [(ngModel)]="antecedentePsicologicoFam"> </textarea>
+        </div>
+        <div class="form-group">
+          <label><b>Psiquiatrico</b></label>
+          <textarea class="form-control" id="antecedentePsiquiatricoFam" name="antecedentePsiquiatricoFam"
+                    required="required" [(ngModel)]="antecedentePsiquiatricoFam"> </textarea>
+        </div>
+        <div class="form-group">
+          <label><b>motivoDeConsulta</b></label>
+          <textarea class="form-control" id="motivoDeConsulta" name="motivoDeConsulta"
+                    required="required" [(ngModel)]="motivoDeConsulta"> </textarea>
+        </div>
+        <div class="form-group">
+          <label><b>diagnostico</b></label>
+          <input type="text" class="form-control" id="diagnostico" name="diagnostico"
+                    required="required" [(ngModel)]="diagnostico">
+        </div>
+        <div class="form-group">
+          <button class="btn btn-outline-info btn -block" [disabled]="!f.valid">Guardar</button>
+
+          <button class="btn btn-outline-info btn -block" routerLink="/lista">Volver</button>
+        </div>
+
+
+      </form>
+
+    </div>
+  </div>
+</div>
+
