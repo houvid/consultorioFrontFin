@@ -4,6 +4,14 @@ table {
   margin-top: 10px;
   padding-top: 10px;
 }
+.btn-Left{
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: right;
+  align-items: center;
+}
+
 .mat-column-Ver{
   word-wrap: break-word !important;
   white-space: unset !important;
@@ -11,9 +19,7 @@ table {
   width: 10% !important;
   overflow-wrap: break-word;
   word-wrap: break-word;
-
   word-break: break-word;
-
   -ms-hyphens: auto;
   -moz-hyphens: auto;
   -webkit-hyphens: auto;

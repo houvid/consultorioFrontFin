@@ -1,45 +1,35 @@
 
 <form class="example-form">
-  <mat-form-field class="example-full-width" appearance="fill">
-    <mat-label>Company (disabled)</mat-label>
-    <input matInput disabled value="Google">
-  </mat-form-field>
 
   <table class="example-full-width" cellspacing="0"><tr>
-    <td><mat-form-field class="example-full-width" appearance="fill">
-      <mat-label>First name</mat-label>
-      <input matInput>
+    <td>
+      <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Paciente</mat-label>
+        <input matInput>
+      </mat-form-field>
+    </td>
+    <td> <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Selecciona una fecha Inicial</mat-label>
+      <input matInput [matDatepicker]="picker" [(ngModel)]="fechaInicio"  [ngModelOptions]="{ standalone: true }">
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
     </mat-form-field></td>
-    <td><mat-form-field class="example-full-width" appearance="fill">
-      <mat-label>Long Last Name That Will Be Truncated</mat-label>
-      <input matInput>
+    <td> <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Selecciona una fecha Final</mat-label>
+      <input matInput [matDatepicker]="picker2" [(ngModel)]="fechaFin"  [ngModelOptions]="{ standalone: true }">
+      <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+      <mat-datepicker #picker2></mat-datepicker>
     </mat-form-field></td>
   </tr></table>
 
   <p>
     <mat-form-field class="example-full-width" appearance="fill">
-      <mat-label>Address</mat-label>
-      <textarea matInput placeholder="Ex. 100 Main St">1600 Amphitheatre Pkwy</textarea>
-    </mat-form-field>
-    <mat-form-field class="example-full-width" appearance="fill">
-      <mat-label>Address 2</mat-label>
-      <textarea matInput></textarea>
+      <mat-label>Observacion</mat-label>
+      <textarea matInput placeholder="Paciente nuevo"></textarea>
     </mat-form-field>
   </p>
-
-  <table class="example-full-width" cellspacing="0"><tr>
-    <td><mat-form-field class="example-full-width" appearance="fill">
-      <mat-label>City</mat-label>
-      <input matInput placeholder="Ex. San Francisco">
-    </mat-form-field></td>
-    <td><mat-form-field class="example-full-width" appearance="fill">
-      <mat-label>State</mat-label>
-      <input matInput placeholder="Ex. California">
-    </mat-form-field></td>
-    <td><mat-form-field class="example-full-width" appearance="fill">
-      <mat-label>Postal Code</mat-label>
-      <input matInput #postalCode maxlength="5" placeholder="Ex. 94105" value="94043">
-      <mat-hint align="end">{{postalCode.value.length}} / 5</mat-hint>
-    </mat-form-field></td>
-  </tr></table>
+    <br>
+      <div class="example-button-row">
+        <button mat-raised-button color="accent" >Nuevo evento</button>
+      </div>
 </form>

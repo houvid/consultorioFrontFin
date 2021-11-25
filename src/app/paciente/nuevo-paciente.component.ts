@@ -12,7 +12,7 @@ import {TokenService} from '../service/token.service';
   styleUrls: ['./nuevo-paciente.component.css']
 })
 export class NuevoPacienteComponent implements OnInit {
-
+  fechaInicio: any  = '';
   cedula = '';
   nombre = '';
   apellido = '';
@@ -54,6 +54,7 @@ export class NuevoPacienteComponent implements OnInit {
   }
 
   onCreate(): void {
+
     const paciente = new Paciente(this.cedula,
       this.nombre,
       this.apellido,

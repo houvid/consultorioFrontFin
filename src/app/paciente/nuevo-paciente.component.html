@@ -1,141 +1,238 @@
 <app-menu></app-menu>
-<div class="container-mt-5 ">
-  <div class="row mt-5">
-    <div class="col-md-4 mx-auto">
-      <form (ngSubmit)="onCreate()" novalidate #f="ngForm">
-        <div class="form-group">
-          <label>Cedula</label>
-          <input type="text" class="form-control" id="cedula" name="cedula"
-                 [(ngModel)]="cedula" required="required">
-        </div>
-        <div class="form-group">
-          <label>Nombre</label>
-          <input type="text" class="form-control" id="nombre" name="nombre"
-                 [(ngModel)]="nombre" required="required">
-        </div>
-        <div class="form-group">
-          <label>Apellido</label>
-          <input type="text" class="form-control" id="apellido" name="apellido"
-                 [(ngModel)]="apellido" required="required">
-        </div>
-        <div class="form-group">
-          <label>Sexo</label>
-          <select class="custom-select my-1 mr-sm-2 form-control"  id="sexo" name="sexo"
-                  [(ngModel)]="sexo" required="required">
-            <option selected>Escoje</option>
-            <option value="Primaria">Masculino</option>
-            <option value="Secundaria">Femenino</option>
-            <option value="Otro">Otro</option>
-          </select>
 
-        </div>
-        <div class="form-group">
-          <label>Nivel de Escolaridad</label>
-          <select class="custom-select my-1 mr-sm-2 form-control"  id="nivelEscolaridad" name="nivelEscolaridad"
-                  [(ngModel)]="nivelEscolaridad" required="required">
-            <option selected>Escoje</option>
-            <option value="Primaria">Primaria</option>
-            <option value="Secundaria">Secundaria</option>
-            <option value="Tecnica">Técnica</option>
-            <option value="Tecnologia">Tecnología</option>
-            <option value="Pregrado">Pregrado</option>
-            <option value="Posgrado">Posgrado</option>
-          </select>
+      <form class="example-form">
 
-        </div>
-        <div class="form-group">
-          <label>Ocupación</label>
-          <input type="text" class="form-control" id="ocupacion" name="ocupacion"
-                 [(ngModel)]="ocupacion" required="required">
-        </div>
-        <div class="form-group">
-          <label>Institución</label>
-          <input type="text" class="form-control" id="institucion" name="institucion"
-                 [(ngModel)]="institucion" required="required">
-        </div>
-        <div class="form-group">
-          <label>Fecha de nacimiento</label>
-          <input type="date" class="form-control" id="fechaNacimiento" name="fechaNacimiento"
-                 [(ngModel)]="fechaNacimiento" required="required">
-        </div>
-        <div class="form-group">
-          <label>lugar de nacimiento</label>
-          <input type="text" class="form-control" id="lugarNacimiento" name="lugarNacimiento"
-                 [(ngModel)]="lugarNacimiento" required="required">
-        </div>
-        <div class="form-group">
-          <label>Direccion</label>
-          <input type="text" class="form-control" id="direccion" name="direccion"
-                 [(ngModel)]="direccion" required="required">
-        </div>
-        <div class="form-group">
-          <label>Municipio</label>
-          <input type="text" class="form-control" id="municipio" name="municipio"
-                 [(ngModel)]="municipio" required="required">
-        </div>
-        <div class="form-group">
-          <label>Telefono</label>
-          <input type="text" class="form-control" id="telefono" name="telefono"
-                 [(ngModel)]="telefono" required="required">
-        </div>
-        <div class="form-group">
-          <label>Celular</label>
-          <input type="text" class="form-control" id="celular" name="celular"
-                 [(ngModel)]="celular" required="required">
-        </div>
-        <div class="form-group">
-          <label>Emai</label>
-          <input type="text" class="form-control" id="emai" name="emai"
-                 [(ngModel)]="emai" required="required">
-        </div>
-        <div class="form-group">
-          <label>Estado Civil</label>
-          <input type="text" class="form-control" id="estadoCivil" name="estadoCivil"
-                 [(ngModel)]="estadoCivil" required="required">
-        </div>
+        <table class="example-full-width" cellspacing="0" >
+          <tr>
+            <td style="text-align: center" colspan="2">
+              <h1>
+                Nuevo paciente
+              </h1>
+            </td>
+          </tr>
 
-        <div class="form-group">
-          <label>Estrato</label>
-          <input type="text" class="form-control" id="estrato" name="estrato"
-                 [(ngModel)]="estrato" required="required">
-        </div>
+          <tr>
+          <td>
+            <mat-form-field class="example-full-width" appearance="fill">
+              <mat-label>Cedula</mat-label>
+              <input matInput [(ngModel)]="cedula" required="required"  [ngModelOptions]="{ standalone: true }" >
+            </mat-form-field>
+          </td>
 
-        <div class="form-group">
-          <label>Tarifa</label>
-          <input type="text" class="form-control" id="tarifa" name="tarifa"
-                 [(ngModel)]="tarifa" required="required">
-        </div>
-        <div class="form-group">
-          <label>Nombre Acudiente</label>
-          <input type="text" class="form-control" id="nombreAcudiente" name="nombreAcudiente"
-                 [(ngModel)]="nombreAcudiente" required="required">
-        </div>
-        <div class="form-group">
-          <label>Edad Acudiente</label>
-          <input type="text" class="form-control" id="edadAcudiente" name="edadAcudiente"
-                 [(ngModel)]="edadAcudiente" required="required">
-        </div>
-        <div class="form-group">
-          <label>Telefono Acudiente</label>
-          <input type="text" class="form-control" id="telefonoAcudiente" name="telefonoAcudiente"
-                 [(ngModel)]="telefonoAcudiente" required="required">
-        </div>
-        <div class="form-group">
-          <label>Celular Acudiente</label>
-          <input type="text" class="form-control" id="celularAcudiente" name="celularAcudiente"
-                 [(ngModel)]="celularAcudiente" required="required">
-        </div>
-        <div class="form-group">
-          <label>Dirección Acudiente</label>
-          <input type="text" class="form-control" id="direccionAcudiente" name="direccionAcudiente"
-                 [(ngModel)]="direccionAcudiente" required="required">
-          <input type="hidden" class="form-control" id="usuarioRegistra" name="usuarioRegistra"
-                 [(ngModel)]="usuarioRegistra" required="required" value="{{usuarioRegistra}}">
-        </div>
-        <button class="btn btn-outline-info btn -block" style="margin-bottom: 10px" [disabled]="!f.valid">Crear</button>
+            <td colspan="1">
+              <mat-form-field class="example-full-width" appearance="fill">
+                <mat-label>Estado Civil</mat-label>
+                <mat-select
+                  [(ngModel)]="estadoCivil"
+                  class="select2"
+                  name="estadoCivil"
+                  style="width: 100%"
+                  [ngModelOptions]="{ standalone: true }"
+                >
+                  <mat-option value="Masculino" >
+                    Masculino
+                  </mat-option>
+                  <mat-option value="Femenino" >
+                    Femenino
+                  </mat-option>
+                  <mat-option value="Otro" >
+                    Otro
+                  </mat-option>
+                </mat-select>
+              </mat-form-field>
+            </td>
+          </tr>
+        <tr>
+          <td colspan="1">
+            <mat-form-field class="example-full-width" appearance="fill">
+              <mat-label>Nombre</mat-label>
+              <input matInput [(ngModel)]="nombre" required="required"  [ngModelOptions]="{ standalone: true }">
+            </mat-form-field>
+          </td>
+          <td colspan="1">
+            <mat-form-field class="example-full-width" appearance="fill">
+              <mat-label>Apellidos</mat-label>
+              <input matInput [(ngModel)]="apellido" required="required"  [ngModelOptions]="{ standalone: true }">
+            </mat-form-field>
+          </td>
+        </tr>
+          <tr>
+            <td colspan="1">
+              <mat-form-field class="example-full-width" appearance="fill">
+                <mat-label>Sexo</mat-label>
+                <mat-select
+                  [(ngModel)]="sexo"
+                  class="select2"
+                  name="sexo"
+                  style="width: 100%"
+                  [ngModelOptions]="{ standalone: true }"
+                >
+                  <mat-option value="Masculino" >
+                    Masculino
+                  </mat-option>
+                  <mat-option value="Femenino" >
+                    Femenino
+                  </mat-option>
+                  <mat-option value="Otro" >
+                    Otro
+                  </mat-option>
+                </mat-select>
+              </mat-form-field>
+            </td>
+            <td colspan="1">
+              <mat-form-field class="example-full-width" appearance="fill">
+                <mat-label>Nivel escolar</mat-label>
+                <mat-select
+                  [(ngModel)]="nivelEscolaridad"
+                  class="select2"
+                  name="sexo"
+                  style="width: 100%"
+                  [ngModelOptions]="{ standalone: true }"
+                >
+                  <mat-option value="Primaria" >
+                    Primaria
+                  </mat-option>
+                  <mat-option value="Secundaria" >
+                    Secundaria
+                  </mat-option>
+                  <mat-option value="Tecnica" >
+                    Técnica
+                  </mat-option>
+                  <mat-option value="Tecnologia" >
+                    Tecnologia
+                  </mat-option>
+                  <mat-option value="Pregrado" >
+                    Pregrado
+                  </mat-option>
+                  <mat-option value="Posgrado" >
+                    Posgrado
+                  </mat-option>
+                </mat-select>
+              </mat-form-field>
+            </td>
+          </tr>
+          <tr>
+            <td colspan="1">
+              <mat-form-field class="example-full-width" appearance="fill">
+                <mat-label>Ocupación</mat-label>
+                <input matInput [(ngModel)]="ocupacion" required="required"  [ngModelOptions]="{ standalone: true }">
+              </mat-form-field>
+            </td>
+            <td colspan="1">
+              <mat-form-field class="example-full-width" appearance="fill">
+                <mat-label>institucion</mat-label>
+                <input matInput [(ngModel)]="institucion" required="required"  [ngModelOptions]="{ standalone: true }">
+              </mat-form-field>
+            </td>
+          </tr>
+          <tr>
+            <td colspan="2"> <mat-form-field class="example-full-width" appearance="fill">
+              <mat-label>Selecciona una fecha de nacimiento </mat-label>
+              <input matInput [matDatepicker]="picker" [(ngModel)]="fechaNacimiento"  [ngModelOptions]="{ standalone: true }">
+              <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+              <mat-datepicker #picker></mat-datepicker>
+            </mat-form-field></td>
+          </tr>
+          <tr>
+            <td colspan="1">
+              <mat-form-field class="example-full-width" appearance="fill">
+                <mat-label>lugar de nacimiento</mat-label>
+                <input matInput [(ngModel)]="lugarNacimiento" required="required"  [ngModelOptions]="{ standalone: true }">
+              </mat-form-field>
+            </td>
+            <td colspan="1">
+              <mat-form-field class="example-full-width" appearance="fill">
+                <mat-label>Direccion</mat-label>
+                <input matInput [(ngModel)]="direccion" required="required"  [ngModelOptions]="{ standalone: true }">
+              </mat-form-field>
+            </td>
+          </tr>
+          <tr>
+            <td colspan="2">
+              <mat-form-field class="example-full-width" appearance="fill">
+                <mat-label>municipio</mat-label>
+                <input matInput [(ngModel)]="municipio" required="required"  [ngModelOptions]="{ standalone: true }">
+              </mat-form-field>
+            </td>
+          </tr>
+          <tr>
+            <td colspan="1">
+              <mat-form-field class="example-full-width" appearance="fill">
+                <mat-label>telefono</mat-label>
+                <input matInput [(ngModel)]="telefono" required="required"  [ngModelOptions]="{ standalone: true }">
+              </mat-form-field>
+            </td>
+
+            <td colspan="1">
+              <mat-form-field class="example-full-width" appearance="fill">
+                <mat-label>celular</mat-label>
+                <input matInput [(ngModel)]="celular" required="required"  [ngModelOptions]="{ standalone: true }">
+              </mat-form-field>
+            </td>
+          </tr>
+
+          <tr>
+            <td colspan="1">
+              <mat-form-field class="example-full-width" appearance="fill">
+                <mat-label>estrato</mat-label>
+                <input matInput [(ngModel)]="estrato" required="required"  [ngModelOptions]="{ standalone: true }">
+              </mat-form-field>
+            </td>
+            <td colspan="1">
+              <mat-form-field class="example-full-width" appearance="fill">
+                <mat-label>tarifa</mat-label>
+                <input matInput [(ngModel)]="tarifa" required="required"  [ngModelOptions]="{ standalone: true }">
+              </mat-form-field>
+            </td>
+          </tr>
+          <tr>
+            <td colspan="2">
+              <mat-form-field class="example-full-width" appearance="fill">
+                <mat-label>Nombre Acudiente</mat-label>
+                <input matInput [(ngModel)]="nombreAcudiente" required="required"  [ngModelOptions]="{ standalone: true }">
+              </mat-form-field>
+            </td>
+          </tr>
+          <tr>
+            <td colspan="2">
+              <mat-form-field class="example-full-width" appearance="fill">
+                <mat-label>Edad Acudiente</mat-label>
+                <input matInput [(ngModel)]="edadAcudiente" required="required"  [ngModelOptions]="{ standalone: true }">
+              </mat-form-field>
+            </td>
+          </tr>
+          <tr>
+            <td colspan="1">
+              <mat-form-field class="example-full-width" appearance="fill">
+                <mat-label>Celular Acudiente</mat-label>
+                <input matInput [(ngModel)]="telefonoAcudiente" required="required"  [ngModelOptions]="{ standalone: true }">
+              </mat-form-field>
+            </td>
+
+            <td colspan="1">
+              <mat-form-field class="example-full-width" appearance="fill">
+                <mat-label>Dirección Acudiente</mat-label>
+                <input matInput [(ngModel)]="direccionAcudiente" required="required"  [ngModelOptions]="{ standalone: true }">
+                <input matInput hidden="true" value="{{usuarioRegistra}}" [(ngModel)]="usuarioRegistra"  [ngModelOptions]="{ standalone: true }">
+              </mat-form-field>
+            </td>
+          </tr>
+          <tr>
+            <td colspan="2">
+              <div class="example-button-row" style="padding-bottom: 30px;">
+                <button mat-raised-button color="accent" (click)="onCreate()" >Nuevo Paciente</button>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td colspan="2">
+              <div class="example-button-row" >
+
+              </div>
+            </td>
+          </tr>
+        </table>
+
       </form>
 
-    </div>
-  </div>
-</div>
 

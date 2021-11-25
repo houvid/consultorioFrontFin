@@ -1,5 +1,8 @@
 <app-menu></app-menu>
 <h1 style="margin: 10px; text-align: center;"> Tus pacientes </h1>
+<div class="btn-Left">
+  <button mat-raised-button color="accent" (click)="dialogAsig()">Nuevo Paciente</button>
+</div>
 <table mat-table [dataSource]="dataSource" class="mat-elevation-z8 table" >
   <!-- Name Column -->
   <ng-container matColumnDef="cedula">
@@ -60,5 +63,7 @@
 
   <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
   <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
 </table>
+
 

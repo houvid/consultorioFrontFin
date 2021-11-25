@@ -5,6 +5,9 @@ import {ToastrService} from 'ngx-toastr';
 import {Router} from '@angular/router';
 import {TokenService} from '../service/token.service';
 import {trigger, style, transition, animate, state} from '@angular/animations';
+import {NewEventComponent} from '../calendar/new-event/new-event.component';
+import {MatDialog} from '@angular/material/dialog';
+import {NuevoPacienteComponent} from './nuevo-paciente.component';
 
 @Component({
   selector: 'app-lista-paciente',
@@ -35,7 +38,8 @@ export class ListaPacienteComponent implements OnInit {
   constructor(private pacienteService: PacienteService,
               private toastr: ToastrService,
               private tokenService: TokenService,
-              private router: Router) {
+              private router: Router,
+              public dialog: MatDialog) {
   }
 
   ngOnInit(): void {
@@ -74,5 +78,12 @@ export class ListaPacienteComponent implements OnInit {
         });
       }
     );
+  }
+
+  dialogAsig(): void {
+    this.dialog.open(NuevoPacienteComponent, {
+      width: '800px',
+      height: '800px;',
+    });
   }
 }

@@ -32,6 +32,8 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import { NewEventComponent } from './calendar/new-event/new-event.component';
 import {MatInputModule} from '@angular/material/input';
+import {MatNativeDateModule, MatOptionModule} from '@angular/material/core';
+import {MatSelectModule} from '@angular/material/select';
 
 
 
@@ -68,8 +70,12 @@ import {MatInputModule} from '@angular/material/input';
     MatFormFieldModule,
     MatDatepickerModule,
     MatInputModule,
+    MatNativeDateModule,
+    MatOptionModule,
+    MatSelectModule
   ],
-  providers: [interceptorProvider],
+  providers: [interceptorProvider,
+    MatDatepickerModule],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

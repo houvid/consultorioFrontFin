@@ -7,7 +7,8 @@ import { Component, OnInit } from '@angular/core';
 export class NewEventComponent implements OnInit {
 
   constructor() { }
-
+  fechaInicio: any  = '';
+  fechaFin: any  = '';
   ngOnInit(): void {
   }
 
