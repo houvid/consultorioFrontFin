@@ -1,7 +1,6 @@
 <app-menu></app-menu>
 <div class="container mt-3" style="width: 90%" *ngIf="paciente">
   <h1>{{paciente.nombre}} {{paciente.apellido}}</h1>
-  <img src="/assets/img/20170425050426_pie-chart.png" width="500" height="300" alt="" style="margin-left: 60px; margin-bottom: 30px">
   <table class="table" style="width: 100%">
     <tbody>
     <tr>
@@ -53,16 +52,16 @@
 
   <table class="table" style="width: 100%">
     <tr>
-      <th>Consumo</th>
-      <th>Medicos</th>
-      <th>Psicologicos</th>
-      <th>psiquiatricos</th>
+      <th>motivoDeConsulta</th>
+      <th>diagnostico</th>
+      <th>antecedentePsiquiatricoFam</th>
+      <th>antecedenteConsumoPac</th>
     </tr>
-    <tr *ngFor="let ant of paciente.antecedentes;">
-      <th>{{ant.consumo}}</th>
-      <th>{{ant.medicos}}</th>
-      <th>{{ant.psicologicos}}</th>
-      <th>{{ant.psiquiatricos}}</th>
+    <tr *ngFor="let historia of paciente.historia;">
+      <th>{{historia.motivoDeConsulta}}</th>
+      <th>{{historia.diagnostico}}</th>
+      <th>{{historia.antecedentePsiquiatricoFam}}</th>
+      <th>{{historia.antecedenteConsumoPac}}</th>
     </tr>
   </table>
 </div>

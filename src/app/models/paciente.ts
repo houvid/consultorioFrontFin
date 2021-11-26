@@ -1,4 +1,5 @@
 import {Antecedentes} from './antecedentes';
+import {Historia} from './historia';
 
 export class Paciente {
   id?: number;
@@ -26,6 +27,7 @@ export class Paciente {
   direccionAcudiente: string;
   usuarioRegistra: string;
   antecedentes?: Antecedentes[];
+  historia?: Historia[];
   constructor(cedula: string,
               nombre: string,
               apellido: string,

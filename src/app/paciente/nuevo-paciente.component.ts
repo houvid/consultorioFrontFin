@@ -4,6 +4,8 @@ import {Paciente} from '../models/paciente';
 import {ToastrService} from 'ngx-toastr';
 import {Router} from '@angular/router';
 import {TokenService} from '../service/token.service';
+import {Municipios} from '../shared/listasDesplegables/municipios';
+import {ListasService} from '../service/listas.service';
 
 
 @Component({
@@ -37,11 +39,13 @@ export class NuevoPacienteComponent implements OnInit {
   direccionAcudiente: '';
   usuarioRegistra: string;
   isLogged: boolean;
+  municipios = Municipios;
   constructor(
     private pacienteService: PacienteService,
     private toastr: ToastrService,
     private router: Router,
     private tokenService: TokenService,
+    private listas: ListasService
   ) { }
 
   ngOnInit(): void {
@@ -51,6 +55,7 @@ export class NuevoPacienteComponent implements OnInit {
     }else {
       this.router.navigate(['/login']);
     }
+    //this.obtenerMunicipios();
   }
 
   onCreate(): void {
@@ -89,8 +94,21 @@ export class NuevoPacienteComponent implements OnInit {
         this.toastr.error(err.error.mensaje, 'Error', {
           timeOut: 3000
         });
-        //this.router.navigate(['/']);
+
       }
       );
+  }
+
+  async obtenerMunicipios() {
+    const respuesta = (await this.listas.obtenerMunicipiosDane())
+      .subscribe((res) => {
+          this.municipios = res.listaMotivos;
+          console.log(res);
+        },
+        (error) => {
+        }
+      );
+
+    return respuesta;
   }
 }

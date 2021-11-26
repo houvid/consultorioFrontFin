@@ -29,11 +29,14 @@
                   style="width: 100%"
                   [ngModelOptions]="{ standalone: true }"
                 >
-                  <mat-option value="Masculino" >
-                    Masculino
+                  <mat-option value="Soltero" >
+                    Soltero
                   </mat-option>
-                  <mat-option value="Femenino" >
-                    Femenino
+                  <mat-option value="Casado" >
+                    Casado
+                  </mat-option>
+                  <mat-option value="Divorciado" >
+                    Divorciado
                   </mat-option>
                   <mat-option value="Otro" >
                     Otro
@@ -126,32 +129,40 @@
             </td>
           </tr>
           <tr>
-            <td colspan="2"> <mat-form-field class="example-full-width" appearance="fill">
+            <td colspan="1"> <mat-form-field class="example-full-width" appearance="fill">
               <mat-label>Selecciona una fecha de nacimiento </mat-label>
               <input matInput [matDatepicker]="picker" [(ngModel)]="fechaNacimiento"  [ngModelOptions]="{ standalone: true }">
               <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
               <mat-datepicker #picker></mat-datepicker>
             </mat-form-field></td>
-          </tr>
-          <tr>
             <td colspan="1">
               <mat-form-field class="example-full-width" appearance="fill">
                 <mat-label>lugar de nacimiento</mat-label>
                 <input matInput [(ngModel)]="lugarNacimiento" required="required"  [ngModelOptions]="{ standalone: true }">
               </mat-form-field>
             </td>
+          </tr>
+          <tr>
             <td colspan="1">
               <mat-form-field class="example-full-width" appearance="fill">
                 <mat-label>Direccion</mat-label>
                 <input matInput [(ngModel)]="direccion" required="required"  [ngModelOptions]="{ standalone: true }">
               </mat-form-field>
             </td>
-          </tr>
-          <tr>
-            <td colspan="2">
+            <td colspan="1">
               <mat-form-field class="example-full-width" appearance="fill">
                 <mat-label>municipio</mat-label>
-                <input matInput [(ngModel)]="municipio" required="required"  [ngModelOptions]="{ standalone: true }">
+                <mat-select
+                  [(ngModel)]="nivelEscolaridad"
+                  class="select2"
+                  name="municipio"
+                  style="width: 100%"
+                  [ngModelOptions]="{ standalone: true }"
+                >
+                <mat-option *ngFor="let municipio of municipios" [value]="municipio.c_digo_dane_del_municipio" >
+                  {{municipio.municipio}}
+                </mat-option>
+                </mat-select>
               </mat-form-field>
             </td>
           </tr>
